@@ -115,8 +115,20 @@ void SmallShell::executeCommand(const char *cmd_line) {
     // for example:
     string cmd_s = _trim(string(cmd_line));
     string firstWord = cmd_s.substr(0, cmd_s.find_first_of(" \n"));
+
+    stringstream ss(cmd_line);
+    
+    string word;
+    vector<string> words;
+    
+    // Extract words one by one (stops at each space)
+    while (ss >> word) {
+        words.push_back(word);
+    }
+
+
     if(firstWord.compare("chprompt") == 0){
-        getInstance().set_chprompt(cmd_s.substr(1, cmd_s.find_first_of(" \n")));
+        getInstance().set_chprompt(words[1]);
     }
     //Command* cmd = CreateCommand(cmd_line);
     //cmd->execute(); 
