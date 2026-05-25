@@ -3,7 +3,8 @@
 #define SMASH_COMMAND_H_
 
 #include <vector>
-
+#include <string>
+using std::string;
 #define COMMAND_MAX_LENGTH (200)
 #define COMMAND_MAX_ARGS (20)
 
