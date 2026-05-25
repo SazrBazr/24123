@@ -125,6 +125,8 @@ public:
 
 class JobsList;
 
+
+
 class QuitCommand : public BuiltInCommand {
     // TODO: Add your data members public:
     QuitCommand(const char *cmd_line, JobsList *jobs);
@@ -239,9 +241,12 @@ public:
     void execute() override;
 };
 
+
+
 class SmallShell {
 private:
-    // TODO: Add your data members
+    string chprompt = "smash";
+
     SmallShell();
 
 public:
@@ -259,6 +264,17 @@ public:
     ~SmallShell();
 
     void executeCommand(const char *cmd_line);
+
+
+    //getters and setters
+    string get_chprompt(){
+        return chprompt;
+    }
+
+    void set_chprompt(string t)
+    {
+        chprompt = t;
+    }
 
     // TODO: add extra methods as needed
 };
