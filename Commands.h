@@ -30,15 +30,16 @@ public:
     }
 };
 
-class ExternalCommand : public Command {
-public:
-    ExternalCommand(const char *cmd_line);
 
-    virtual ~ExternalCommand() {
-    }
+// class ExternalCommand : public Command {
+// public:
+//     ExternalCommand(const char *cmd_line);
 
-    void execute() override;
-};
+//     virtual ~ExternalCommand() {
+//     }
+
+//     void execute() override;
+// };
 
 
 class RedirectionCommand : public Command {
@@ -104,7 +105,7 @@ class ChangeDirCommand : public BuiltInCommand {
     void execute() override;
 };
 
-class GetCurrDirCommand : public BuiltInCommand {
+/* class GetCurrDirCommand : public BuiltInCommand {
 public:
     GetCurrDirCommand(const char *cmd_line);
 
@@ -113,7 +114,9 @@ public:
 
     void execute() override;
 };
+*/
 
+/*
 class ShowPidCommand : public BuiltInCommand {
 public:
     ShowPidCommand(const char *cmd_line);
@@ -123,6 +126,7 @@ public:
 
     void execute() override;
 };
+*/
 
 class JobsList;
 
